@@ -28,7 +28,7 @@ final class PhotoSearchDao {
     
     weak var returnResult: ReturnResult?
     
-    func fetchPhoto(tags: String ) {
+    func fetchPhoto(tags: String, page: Int) {
         
         if !NetworkConnection.isConnectable() {
             returnResult?.returnResult(returnCode: .offline)
@@ -39,7 +39,9 @@ final class PhotoSearchDao {
                     "api_key": "92f3fd8101d1d3a3613339d37c0452b9",
                     "format": "json",
                     "nojsoncallback": "1",
-                    "tags": tags]
+                    "tags": tags,
+                    "per_page": 50,
+                    "page": page] as [String : Any]
         let router = Router.photoSearch(para)
         
         APIClient.request(router: router) { [weak self] response in
@@ -59,7 +61,8 @@ final class PhotoSearchDao {
              
                 let photo = fetchResult?.photos.photo
                 guard let fetchedPhoto = photo else { return }
-                
+                print("-------------")
+                print(fetchedPhoto.count)
                 self?.returnResult?.returnResult(returnCode: .success(fetchedPhoto))
              
             case .failure(let error):

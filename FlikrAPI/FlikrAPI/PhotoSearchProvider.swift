@@ -13,9 +13,12 @@ final class PhotoSearchProvider: NSObject {
     private var items = [Photo]()
 
     func getPhotoId(items: [Photo]) {
+        if self.items.count >= 50 {
+            self.items.append(contentsOf: items)
+        } else {
         self.items = items
+        }
     }
-    
 }
 
 extension PhotoSearchProvider: UITableViewDataSource {

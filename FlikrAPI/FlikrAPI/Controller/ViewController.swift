@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     //MARK: - Properties
     private let apiDao = PhotoSearchDao()
     private let resultProvider = PhotoSearchProvider()
+    private var currentPage = 1
     
     //MARK: - IBOutlet
     @IBOutlet weak var resultTableView: UITableView!
@@ -37,7 +38,7 @@ extension ViewController {
     
     private func searchPhoto() {
         guard let tags = searchBar.text else { return }
-        apiDao.fetchPhoto(tags: tags)
+        apiDao.fetchPhoto(tags: tags, page: currentPage)
     }
     private func setup() {
         searchBar.enablesReturnKeyAutomatically = false
@@ -54,6 +55,11 @@ extension ViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    private func fetchNextPage() {
+        currentPage += 1
+        searchPhoto()
+    }
+    
     private func registerGestureRecognizer() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(endEditing))
         self.view.addGestureRecognizer(tap)
@@ -62,17 +68,23 @@ extension ViewController {
     @objc private func endEditing() {
         self.view.endEditing(true)
     }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        if maximumOffset - currentOffset <= 10 {
+            self.fetchNextPage()
+        }
+    }
     
 }
 
-    //MARK: - ReturnResultDelegate
+//MARK: - ReturnResultDelegate
 extension ViewController: ReturnResult {
     
     func returnResult(returnCode: FetchResult) {
         switch returnCode {
             
         case .success(let photo):
-        //TODO: Paging処理 
             if photo.count != 0 {
                 resultProvider.getPhotoId(items: photo)
                 resultTableView.reloadData()
@@ -107,6 +119,7 @@ extension ViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.view.endEditing(true)
     }
+    
 }
 
     //MARK: - UITableViewDelegate
