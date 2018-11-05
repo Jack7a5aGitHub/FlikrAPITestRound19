@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
     
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupView(isHidden: true)
         setup()
+       
     }
 }
 
@@ -41,15 +43,23 @@ extension ViewController {
         apiDao.fetchPhoto(tags: tags, page: currentPage)
     }
     private func setup() {
+        title = "PHOTOS".localized()
         searchBar.enablesReturnKeyAutomatically = false
         searchBar.delegate = self
         apiDao.returnResult = self
+        
+        registerGestureRecognizer()
+    }
+    private func setupTableView() {
+        registerNib()
         resultTableView.delegate = self
         resultTableView.dataSource = resultProvider
         resultTableView.allowsSelection = false
-        registerGestureRecognizer()
     }
-    
+    private func registerNib() {
+        let photoNib = UINib(nibName: PhotoCell.nibName, bundle: nil)
+        resultTableView.register(photoNib, forCellReuseIdentifier: PhotoCell.identifier)
+    }
     private func showAlert(message: String) {
         let alert = AlertHelper.buildAlert(message: message)
         present(alert, animated: true, completion: nil)

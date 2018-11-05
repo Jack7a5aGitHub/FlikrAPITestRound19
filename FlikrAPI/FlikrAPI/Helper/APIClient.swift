@@ -31,11 +31,15 @@ final class APIClient {
             switch response.result {
                 
             case .success:
+                LogHelper.log("\n👇👇👇" +
+                    "\nStatusCode: \(String(describing: response.response?.statusCode))\nResponseBody: \(response)")
                 completionHandler(Result.success(response.data))
                 return
                 
             case .failure:
                 if let error = response.result.error {
+                    LogHelper.log("\n🔻🔻🔻" +
+                        "\nStatusCode: \nResponseBody:\(error)")
                     completionHandler(Result.failure(error))
                     return
                 }

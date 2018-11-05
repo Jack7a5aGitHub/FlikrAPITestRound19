@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ACF0F5E2190967100E172F2 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACF0F5D2190967100E172F2 /* Kingfisher.framework */; };
+		0ACF0F612190988000E172F2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACF0F5F2190988000E172F2 /* PhotoCell.swift */; };
+		0ACF0F622190988000E172F2 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ACF0F602190988000E172F2 /* PhotoCell.xib */; };
+		0ACF0F65219098E500E172F2 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACF0F64219098E500E172F2 /* NSObject+ClassName.swift */; };
 		0AD4DC9E20D498A900CD0734 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4DC9D20D498A900CD0734 /* AppDelegate.swift */; };
 		0AD4DCA020D498A900CD0734 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4DC9F20D498A900CD0734 /* ViewController.swift */; };
 		0AD4DCA520D498AE00CD0734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AD4DCA420D498AE00CD0734 /* Assets.xcassets */; };
@@ -23,11 +27,14 @@
 		0AD4DCC820D4A8C100CD0734 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4DCC720D4A8C100CD0734 /* String+Localized.swift */; };
 		0AD4DCCA20D4A8E100CD0734 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0AD4DCC920D4A8E100CD0734 /* Localizable.strings */; };
 		0AD4DCCD20D4A99B00CD0734 /* PhotoSearchProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4DCCC20D4A99B00CD0734 /* PhotoSearchProvider.swift */; };
-		0AD4DCCF20D4AA1900CD0734 /* PhotoSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4DCCE20D4AA1900CD0734 /* PhotoSearchTableViewCell.swift */; };
 		0AD4DCD120D4AD4800CD0734 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AD4DCD020D4AD4800CD0734 /* Reachability.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0ACF0F5D2190967100E172F2 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		0ACF0F5F2190988000E172F2 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		0ACF0F602190988000E172F2 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
+		0ACF0F64219098E500E172F2 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		0AD4DC9A20D498A900CD0734 /* FlikrAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlikrAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AD4DC9D20D498A900CD0734 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AD4DC9F20D498A900CD0734 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,11 +50,12 @@
 		0AD4DCC020D4A15D00CD0734 /* ViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViewController.storyboard; sourceTree = "<group>"; };
 		0AD4DCC220D4A40900CD0734 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 		0AD4DCC520D4A8A400CD0734 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
-		0AD4DCC720D4A8C100CD0734 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Localized.swift"; path = "FlikrAPI/Helper/String+Localized.swift"; sourceTree = SOURCE_ROOT; };
+		0AD4DCC720D4A8C100CD0734 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Localized.swift"; path = "FlikrAPI/Extension/Foundation/String+Localized.swift"; sourceTree = SOURCE_ROOT; };
 		0AD4DCC920D4A8E100CD0734 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		0AD4DCCC20D4A99B00CD0734 /* PhotoSearchProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoSearchProvider.swift; path = FlikrAPI/PhotoSearchProvider.swift; sourceTree = SOURCE_ROOT; };
-		0AD4DCCE20D4AA1900CD0734 /* PhotoSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSearchTableViewCell.swift; sourceTree = "<group>"; };
 		0AD4DCD020D4AD4800CD0734 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
+		56AE04AC64E70BF541A56F56 /* Pods-FlikrAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlikrAPI.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlikrAPI/Pods-FlikrAPI.release.xcconfig"; sourceTree = "<group>"; };
+		823956E83AF1C1BAE956B0F6 /* Pods-FlikrAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlikrAPI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlikrAPI/Pods-FlikrAPI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ACF0F5E2190967100E172F2 /* Kingfisher.framework in Frameworks */,
 				0AD4DCD120D4AD4800CD0734 /* Reachability.framework in Frameworks */,
 				0AD4DCB220D49C8800CD0734 /* Alamofire.framework in Frameworks */,
 			);
@@ -63,12 +72,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0ACF0F63219098D500E172F2 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				0AD4DCC720D4A8C100CD0734 /* String+Localized.swift */,
+				0ACF0F64219098E500E172F2 /* NSObject+ClassName.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		0ACF0F66219099A500E172F2 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				0AD4DCA420D498AE00CD0734 /* Assets.xcassets */,
+				0AD4DCA620D498AE00CD0734 /* LaunchScreen.storyboard */,
+				0AD4DCA920D498AE00CD0734 /* Info.plist */,
+				0AD4DCC920D4A8E100CD0734 /* Localizable.strings */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		0AD4DC9120D498A800CD0734 = {
 			isa = PBXGroup;
 			children = (
 				0AD4DC9C20D498A900CD0734 /* FlikrAPI */,
+				0AD4DC9D20D498A900CD0734 /* AppDelegate.swift */,
 				0AD4DC9B20D498A900CD0734 /* Products */,
 				0AD4DCB020D49C8800CD0734 /* Frameworks */,
+				EB1E48432841E05DB84A63EA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,16 +114,12 @@
 		0AD4DC9C20D498A900CD0734 /* FlikrAPI */ = {
 			isa = PBXGroup;
 			children = (
-				0AD4DCCB20D4A98000CD0734 /* View */,
+				0AD4DCB320D49C9100CD0734 /* Helper */,
 				0AD4DCC420D4A88300CD0734 /* Extension */,
 				0AD4DCBB20D49DAA00CD0734 /* Model */,
-				0AD4DCB320D49C9100CD0734 /* Helper */,
-				0AD4DC9D20D498A900CD0734 /* AppDelegate.swift */,
+				0AD4DCCB20D4A98000CD0734 /* View */,
 				0AD4DCB420D49C9C00CD0734 /* Controller */,
-				0AD4DCA420D498AE00CD0734 /* Assets.xcassets */,
-				0AD4DCA620D498AE00CD0734 /* LaunchScreen.storyboard */,
-				0AD4DCA920D498AE00CD0734 /* Info.plist */,
-				0AD4DCC920D4A8E100CD0734 /* Localizable.strings */,
+				0ACF0F66219099A500E172F2 /* Other */,
 			);
 			path = FlikrAPI;
 			sourceTree = "<group>";
@@ -100,6 +127,7 @@
 		0AD4DCB020D49C8800CD0734 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0ACF0F5D2190967100E172F2 /* Kingfisher.framework */,
 				0AD4DCD020D4AD4800CD0734 /* Reachability.framework */,
 				0AD4DCB120D49C8800CD0734 /* Alamofire.framework */,
 			);
@@ -140,7 +168,7 @@
 		0AD4DCC420D4A88300CD0734 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				0AD4DCC720D4A8C100CD0734 /* String+Localized.swift */,
+				0ACF0F63219098D500E172F2 /* Foundation */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -149,9 +177,19 @@
 			isa = PBXGroup;
 			children = (
 				0AD4DCCC20D4A99B00CD0734 /* PhotoSearchProvider.swift */,
-				0AD4DCCE20D4AA1900CD0734 /* PhotoSearchTableViewCell.swift */,
+				0ACF0F5F2190988000E172F2 /* PhotoCell.swift */,
+				0ACF0F602190988000E172F2 /* PhotoCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EB1E48432841E05DB84A63EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				823956E83AF1C1BAE956B0F6 /* Pods-FlikrAPI.debug.xcconfig */,
+				56AE04AC64E70BF541A56F56 /* Pods-FlikrAPI.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +199,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AD4DCAC20D498AE00CD0734 /* Build configuration list for PBXNativeTarget "FlikrAPI" */;
 			buildPhases = (
+				D9F1EAB636D848A7504A47B1 /* [CP] Check Pods Manifest.lock */,
 				0AD4DC9620D498A900CD0734 /* Sources */,
 				0AD4DC9720D498A900CD0734 /* Frameworks */,
 				0AD4DC9820D498A900CD0734 /* Resources */,
@@ -217,6 +256,7 @@
 				0AD4DCCA20D4A8E100CD0734 /* Localizable.strings in Resources */,
 				0AD4DCA520D498AE00CD0734 /* Assets.xcassets in Resources */,
 				0AD4DCC120D4A15D00CD0734 /* ViewController.storyboard in Resources */,
+				0ACF0F622190988000E172F2 /* PhotoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,12 +271,31 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		D9F1EAB636D848A7504A47B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlikrAPI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -249,7 +308,8 @@
 				0AD4DCA020D498A900CD0734 /* ViewController.swift in Sources */,
 				0AD4DCCD20D4A99B00CD0734 /* PhotoSearchProvider.swift in Sources */,
 				0AD4DCBA20D49D2D00CD0734 /* LogHelper.swift in Sources */,
-				0AD4DCCF20D4AA1900CD0734 /* PhotoSearchTableViewCell.swift in Sources */,
+				0ACF0F65219098E500E172F2 /* NSObject+ClassName.swift in Sources */,
+				0ACF0F612190988000E172F2 /* PhotoCell.swift in Sources */,
 				0AD4DCB620D49D1200CD0734 /* Router.swift in Sources */,
 				0AD4DCC820D4A8C100CD0734 /* String+Localized.swift in Sources */,
 				0AD4DCC320D4A40900CD0734 /* NetworkConnection.swift in Sources */,
@@ -325,7 +385,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -379,7 +439,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -390,6 +450,7 @@
 		};
 		0AD4DCAD20D498AE00CD0734 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 823956E83AF1C1BAE956B0F6 /* Pods-FlikrAPI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -399,6 +460,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = FlikrAPI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -412,6 +474,7 @@
 		};
 		0AD4DCAE20D498AE00CD0734 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56AE04AC64E70BF541A56F56 /* Pods-FlikrAPI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -421,6 +484,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = FlikrAPI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

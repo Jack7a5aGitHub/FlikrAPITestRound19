@@ -24,18 +24,16 @@ final class PhotoSearchProvider: NSObject {
 extension PhotoSearchProvider: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Number of Rows Count: \(items.count)")
+        
         return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell", for: indexPath) as? PhotoSearchTableViewCell else {
+        guard let photoCell = tableView.dequeueReusableCell(withIdentifier: PhotoCell.identifier, for: indexPath) as? PhotoCell else {
             fatalError("Photo Cell is nil")
         }
         
-        cell.setPhotoId(id: items[indexPath.row].id)
-  
-        return cell
+        return photoCell
     }
     
 }

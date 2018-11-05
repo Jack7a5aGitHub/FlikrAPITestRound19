@@ -22,6 +22,8 @@ struct Photos: Decodable {
 
 struct Photo: Decodable {
     let id: String
+    let owner: String
+    let title: String 
 }
 
 final class PhotoSearchDao {
@@ -35,14 +37,17 @@ final class PhotoSearchDao {
             return
         }
         
-        let para = ["method": "flickr.photos.search",
+        let parameter = ["method": "flickr.photos.search",
                     "api_key": "92f3fd8101d1d3a3613339d37c0452b9",
                     "format": "json",
                     "nojsoncallback": "1",
                     "tags": tags,
                     "per_page": 50,
+                    "content_type": 1,
+                    "media": "photos",
+                    "privacy_filter": 1,
                     "page": page] as [String : Any]
-        let router = Router.photoSearch(para)
+        let router = Router.photoSearch(parameter)
         
         APIClient.request(router: router) { [weak self] response in
             
@@ -61,8 +66,6 @@ final class PhotoSearchDao {
              
                 let photo = fetchResult?.photos.photo
                 guard let fetchedPhoto = photo else { return }
-                print("-------------")
-                print(fetchedPhoto.count)
                 self?.returnResult?.returnResult(returnCode: .success(fetchedPhoto))
              
             case .failure(let error):
