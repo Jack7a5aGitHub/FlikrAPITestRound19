@@ -8,11 +8,16 @@
 
 import UIKit
 
+struct PhotoList {
+    var imageUrl: String
+    var title: String
+}
+
 final class PhotoSearchProvider: NSObject {
     
-    private var items = [Photo]()
+    private var items = [PhotoList]()
 
-    func getPhotoId(items: [Photo]) {
+    func getPhotoId(items: [PhotoList]) {
         if self.items.count >= 50 {
             self.items.append(contentsOf: items)
         } else {
@@ -32,7 +37,8 @@ extension PhotoSearchProvider: UITableViewDataSource {
         guard let photoCell = tableView.dequeueReusableCell(withIdentifier: PhotoCell.identifier, for: indexPath) as? PhotoCell else {
             fatalError("Photo Cell is nil")
         }
-        
+        photoCell.title = items[indexPath.row].title
+        photoCell.imageUrl = items[indexPath.row].imageUrl
         return photoCell
     }
     

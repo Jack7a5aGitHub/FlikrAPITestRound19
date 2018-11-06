@@ -86,8 +86,8 @@
 			children = (
 				0AD4DCA420D498AE00CD0734 /* Assets.xcassets */,
 				0AD4DCA620D498AE00CD0734 /* LaunchScreen.storyboard */,
-				0AD4DCA920D498AE00CD0734 /* Info.plist */,
 				0AD4DCC920D4A8E100CD0734 /* Localizable.strings */,
+				0AD4DC9D20D498A900CD0734 /* AppDelegate.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -96,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				0AD4DC9C20D498A900CD0734 /* FlikrAPI */,
-				0AD4DC9D20D498A900CD0734 /* AppDelegate.swift */,
 				0AD4DC9B20D498A900CD0734 /* Products */,
 				0AD4DCB020D49C8800CD0734 /* Frameworks */,
 				EB1E48432841E05DB84A63EA /* Pods */,
@@ -120,6 +119,7 @@
 				0AD4DCCB20D4A98000CD0734 /* View */,
 				0AD4DCB420D49C9C00CD0734 /* Controller */,
 				0ACF0F66219099A500E172F2 /* Other */,
+				0AD4DCA920D498AE00CD0734 /* Info.plist */,
 			);
 			path = FlikrAPI;
 			sourceTree = "<group>";

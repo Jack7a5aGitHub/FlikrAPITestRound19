@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     private let apiDao = PhotoSearchDao()
     private let resultProvider = PhotoSearchProvider()
     private var currentPage = 1
-    
+    private var photoList = [PhotoList]()
     //MARK: - IBOutlet
     @IBOutlet weak var resultTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -38,16 +38,15 @@ extension ViewController {
         resultTableView.isHidden = isHidden
     }
     
-    private func searchPhoto() {
-        guard let tags = searchBar.text else { return }
-        apiDao.fetchPhoto(tags: tags, page: currentPage)
+    private func searchPhoto(tag: String) {
+        apiDao.fetchPhoto(tags: tag, page: currentPage)
     }
     private func setup() {
         title = "PHOTOS".localized()
         searchBar.enablesReturnKeyAutomatically = false
         searchBar.delegate = self
         apiDao.returnResult = self
-        
+        setupTableView()
         registerGestureRecognizer()
     }
     private func setupTableView() {
@@ -67,7 +66,10 @@ extension ViewController {
     
     private func fetchNextPage() {
         currentPage += 1
-        searchPhoto()
+        guard let tags = searchBar.text else {
+            return
+        }
+        searchPhoto(tag: tags)
     }
     
     private func registerGestureRecognizer() {
@@ -96,7 +98,12 @@ extension ViewController: ReturnResult {
             
         case .success(let photo):
             if photo.count != 0 {
-                resultProvider.getPhotoId(items: photo)
+                photoList = []
+                for item in photo {
+                    photoList.append(PhotoList(imageUrl: "https://farm\(item.farm).staticflickr.com/\(item.server)/\(item.id)_\(item.secret).jpg",
+                                               title: item.title))
+                }
+                resultProvider.getPhotoId(items: photoList)
                 resultTableView.reloadData()
             } else {
                 resultTableView.isHidden = true
@@ -122,7 +129,10 @@ extension ViewController: UISearchBarDelegate {
             print("Search Started")
             noResultView.isHidden = true
             resultTableView.isHidden = false
-            searchPhoto()
+            guard let tags = searchBar.text else {
+                return
+            }
+            searchPhoto(tag: tags)
         }
     }
     
@@ -134,8 +144,13 @@ extension ViewController: UISearchBarDelegate {
 
     //MARK: - UITableViewDelegate
 extension ViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 }

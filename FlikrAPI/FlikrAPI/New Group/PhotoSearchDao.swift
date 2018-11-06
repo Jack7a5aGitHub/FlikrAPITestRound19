@@ -22,8 +22,10 @@ struct Photos: Decodable {
 
 struct Photo: Decodable {
     let id: String
-    let owner: String
-    let title: String 
+    let server: String
+    let title: String
+    let farm: Int
+    let secret: String
 }
 
 final class PhotoSearchDao {
@@ -56,6 +58,7 @@ final class PhotoSearchDao {
                 
                 
                 guard let data = result else {
+                    print("no data ")
                     return
                 }
               
@@ -67,7 +70,7 @@ final class PhotoSearchDao {
                 let photo = fetchResult?.photos.photo
                 guard let fetchedPhoto = photo else { return }
                 self?.returnResult?.returnResult(returnCode: .success(fetchedPhoto))
-             
+                print("fetch", fetchedPhoto)
             case .failure(let error):
                 
                 LogHelper.log("error_code: \((error as NSError).code)")

@@ -37,7 +37,8 @@ enum Router: URLRequestConvertible {
             urlRequest.httpMethod = method
             //urlRequest.allHTTPHeaderFields = header
             
-            LogHelper.log("\(urlRequest)")
+            LogHelper.log("\n👆👆👆\nRequestURL:\(urlRequest.url?.absoluteString ?? "")" +
+                "\nRequestParameter: \(para)")
             return try Alamofire.URLEncoding.default.encode(urlRequest, with: para)
         } else {
             fatalError("url is nil.")
